@@ -6,48 +6,52 @@
 
 @layer base {
   :root {
-    /* Airtable-inspired palette */
-    --ink: #181d26;
-    --ink-active: #0d1218;
-    --body: #333840;
-    --muted: #41454d;
-    --hairline: #dddddd;
-    --border-strong: #9297a0;
-    --canvas: #ffffff;
-    --surface-soft: #f8fafc;
-    --surface-strong: #e0e2e6;
-    --surface-dark: #181d26;
-    --surface-dark-elevated: #1d1f25;
+    /* werkhain palette — warm concrete base, industrial charcoal, graffiti accents */
+    --ink: #171310;
+    --ink-active: #000000;
+    --body: #39332c;
+    --muted: #6f675b;
+    --hairline: #d8cfbf;
+    --border-strong: #b7ab94;
+    --canvas: #f4f1ea;
+    --surface-soft: #ece6db;
+    --surface-strong: #ddd5c6;
+    --surface-dark: #14110e;
+    --surface-dark-elevated: #1b1713;
+    --noir: #14110e;
 
-    /* Signature cards */
-    --sig-coral: #1db954;
-    --sig-forest: #0f2a1a;
-    --sig-cream: #f3f0e8;
-    --sig-peach: #ff8f70;
-    --sig-mint: #b7e4c7;
+    /* Signature accents */
+    --sig-coral: #ff5a1f; /* neon orange — primary */
+    --sig-blue: #2f6bff; /* electric blue */
+    --sig-acid: #c2f53d; /* acid green */
+    --sig-red: #e5341c; /* warm red */
+    --sig-forest: #14110e;
+    --sig-cream: #f0e6d4;
+    --sig-peach: #ff8a4c;
+    --sig-mint: #c2f53d;
     --sig-yellow: #ffd166;
-    --sig-mustard: #c9a227;
+    --sig-mustard: #d9a441;
 
     /* System tokens mapped to shadcn */
-    --background: 0 0% 100%;
-    --foreground: 220 18% 13%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 18% 13%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 18% 13%;
-    --primary: 220 18% 13%;
+    --background: 43 33% 94%;
+    --foreground: 30 21% 8%;
+    --card: 43 33% 94%;
+    --card-foreground: 30 21% 8%;
+    --popover: 43 33% 94%;
+    --popover-foreground: 30 21% 8%;
+    --primary: 30 21% 8%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 10% 88%;
-    --secondary-foreground: 220 18% 13%;
-    --muted: 210 17% 98%;
-    --muted-foreground: 215 10% 41%;
-    --accent: 210 17% 98%;
-    --accent-foreground: 220 18% 13%;
-    --destructive: 0 84.2% 60.2%;
+    --secondary: 40 18% 82%;
+    --secondary-foreground: 30 21% 8%;
+    --muted: 40 20% 92%;
+    --muted-foreground: 35 10% 40%;
+    --accent: 18 100% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 8 80% 51%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 87%;
-    --input: 0 0% 87%;
-    --ring: 220 18% 13%;
+    --border: 40 24% 80%;
+    --input: 40 24% 80%;
+    --ring: 18 100% 56%;
     --radius: 0.75rem;
 
     --font-sans: 'Inter', system-ui, sans-serif;
@@ -115,7 +119,11 @@
   .bg-surface-soft   { background-color: var(--surface-soft); }
   .bg-surface-strong { background-color: var(--surface-strong); }
   .bg-surface-dark   { background-color: var(--surface-dark); }
+  .bg-noir     { background-color: var(--noir); }
   .bg-sig-coral  { background-color: var(--sig-coral); }
+  .bg-sig-blue   { background-color: var(--sig-blue); }
+  .bg-sig-acid   { background-color: var(--sig-acid); }
+  .bg-sig-red    { background-color: var(--sig-red); }
   .bg-sig-forest { background-color: var(--sig-forest); }
   .bg-sig-cream  { background-color: var(--sig-cream); }
   .bg-sig-peach  { background-color: var(--sig-peach); }
@@ -123,6 +131,9 @@
   .bg-sig-yellow { background-color: var(--sig-yellow); }
   .bg-sig-mustard{ background-color: var(--sig-mustard); }
   .text-sig-coral { color: var(--sig-coral); }
+  .text-sig-blue  { color: var(--sig-blue); }
+  .text-sig-acid  { color: var(--sig-acid); }
+  .text-sig-red   { color: var(--sig-red); }
   .border-hairline { border-color: var(--hairline); }
 
   /* Spacing */
@@ -205,7 +216,15 @@
   .mono { font-family: var(--font-mono); font-size: 13px; }
 
   /* Status dot */
-  .status-dot { width: 8px; height: 8px; border-radius: 50%; background-color: #39bf45; display: inline-block; }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; background-color: #aef03a; display: inline-block; box-shadow: 0 0 8px rgba(174,240,58,0.7); }
+
+  /* Pin pulse (Wander globe) */
+  @keyframes pin-pulse {
+    0% { transform: scale(1); opacity: 0.55; }
+    70% { transform: scale(2.6); opacity: 0; }
+    100% { transform: scale(2.6); opacity: 0; }
+  }
+  .animate-pin-pulse { animation: pin-pulse 2.6s ease-out infinite; transform-origin: center; transform-box: fill-box; }
 
   /* Ticker */
   @keyframes ticker {

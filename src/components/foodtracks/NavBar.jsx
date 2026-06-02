@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { FileText } from 'lucide-react';
 import LangToggle from './LangToggle';
 
 const handleNav = (event, href, setMenuOpen) => {
@@ -8,7 +9,7 @@ const handleNav = (event, href, setMenuOpen) => {
   document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
 };
 
-export default function NavBar({ lang, setLang, items, contactLabel }) {
+export default function NavBar({ lang, setLang, items, contactLabel, resumeLabel }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -25,8 +26,8 @@ export default function NavBar({ lang, setLang, items, contactLabel }) {
         <div
           className={`flex h-[60px] items-center justify-between gap-3 rounded-full border px-4 backdrop-blur-2xl transition-[background-color,box-shadow,border-color] duration-300 sm:px-5 ${
             scrolled
-              ? 'border-sig-coral/20 bg-white/80 shadow-[0_18px_50px_-24px_rgba(29,185,84,0.55),0_10px_30px_-22px_rgba(15,17,21,0.3)]'
-              : 'border-black/5 bg-white/60 shadow-[0_1px_0_rgba(15,17,21,0.04)]'
+              ? 'border-sig-coral/25 bg-[#f4f1ea]/85 shadow-[0_18px_50px_-24px_rgba(255,90,31,0.5),0_10px_30px_-22px_rgba(23,19,16,0.3)]'
+              : 'border-black/5 bg-[#f4f1ea]/60 shadow-[0_1px_0_rgba(23,19,16,0.04)]'
           }`}
         >
           <a
@@ -38,7 +39,7 @@ export default function NavBar({ lang, setLang, items, contactLabel }) {
             className="flex min-w-0 items-baseline gap-2"
           >
             <span className="truncate text-[15px] font-semibold text-ink sm:text-[16px]">Oliver</span>
-            <span className="hidden text-[13px] font-medium text-sig-coral sm:inline">for Spotify</span>
+            <span className="hidden text-[13px] font-medium text-sig-coral sm:inline">for werkhain</span>
           </a>
 
           <div className="hidden items-center gap-1 md:flex">
@@ -56,6 +57,15 @@ export default function NavBar({ lang, setLang, items, contactLabel }) {
 
           <div className="flex items-center gap-2">
             <LangToggle lang={lang} setLang={setLang} />
+            <a
+              href="/Oliver_Jaensch_Lebenslauf.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="hidden items-center rounded-full border border-ink/10 bg-surface-soft px-4 py-2 text-[14px] font-semibold text-ink transition-colors hover:border-sig-coral hover:bg-sig-coral hover:text-white lg:inline-flex"
+            >
+              <FileText className="mr-2 h-4 w-4" />
+              {resumeLabel}
+            </a>
             <a
               href="#kontakt"
               onClick={(event) => handleNav(event, '#kontakt')}
@@ -84,7 +94,7 @@ export default function NavBar({ lang, setLang, items, contactLabel }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.96 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed left-4 right-4 top-[78px] z-40 overflow-hidden rounded-2xl border border-sig-coral/20 bg-white/90 p-2 shadow-2xl backdrop-blur-2xl md:hidden"
+            className="fixed left-4 right-4 top-[78px] z-40 overflow-hidden rounded-2xl border border-sig-coral/20 bg-[#f4f1ea]/92 p-2 shadow-2xl backdrop-blur-2xl md:hidden"
           >
             {[...items, { label: contactLabel, href: '#kontakt' }].map((item) => (
               <a
@@ -96,6 +106,16 @@ export default function NavBar({ lang, setLang, items, contactLabel }) {
                 {item.label}
               </a>
             ))}
+            <a
+              href="/Oliver_Jaensch_Lebenslauf.pdf"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-2 rounded-xl px-4 py-3 text-[15px] font-medium text-ink"
+            >
+              <FileText className="h-4 w-4 text-sig-coral" />
+              {resumeLabel}
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
