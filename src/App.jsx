@@ -1,4 +1,5 @@
 import { Toaster } from "@/components/ui/toaster"
+import { Analytics } from "@vercel/analytics/react"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import WerkhainApplication from './pages/FoodTracks';
@@ -13,6 +14,7 @@ function App() {
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Toaster />
+      <Analytics />
     </Router>
   )
 }
