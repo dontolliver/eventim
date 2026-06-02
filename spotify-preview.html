@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oliver Jaensch -> Spotify Central Europe Marketing</title>
+    <style>
+      :root {
+        --ink: #121212;
+        --body: #30343a;
+        --muted: #6a7079;
+        --line: #e1e4e8;
+        --soft: #f6f7f4;
+        --paper: #fffdf8;
+        --green: #1db954;
+        --green-dark: #0f7d38;
+        --night: #191414;
+        --charcoal: #20252b;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.55;
+      }
+      a { color: inherit; }
+      p { margin: 0; color: var(--body); }
+      h1, h2, h3 { margin: 0; line-height: .98; letter-spacing: 0; }
+      h1 { max-width: 900px; font-size: clamp(52px, 8.4vw, 112px); font-weight: 820; }
+      h2 { font-size: clamp(34px, 5vw, 68px); font-weight: 780; }
+      h3 { font-size: 22px; font-weight: 760; line-height: 1.08; }
+      section { padding: 96px 0; }
+
+      .wrap { width: min(1180px, calc(100vw - 40px)); margin: 0 auto; }
+      .grid { display: grid; gap: 24px; }
+      .eyebrow {
+        display: block;
+        margin-bottom: 16px;
+        color: var(--green-dark);
+        font-size: 12px;
+        font-weight: 850;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+
+      .nav {
+        position: sticky;
+        top: 14px;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: min(92vw, 760px);
+        min-height: 56px;
+        margin: 14px auto 0;
+        padding: 0 18px;
+        border: 1px solid rgba(29,185,84,.28);
+        border-radius: 999px;
+        background: rgba(255,253,248,.82);
+        box-shadow: 0 18px 54px -30px rgba(18,18,18,.5);
+        backdrop-filter: blur(22px);
+      }
+      .brand { display: flex; align-items: center; gap: 10px; font-weight: 850; }
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--green);
+        color: var(--night);
+        font-size: 12px;
+        font-weight: 950;
+      }
+      .brand span:last-child { color: var(--green-dark); font-size: 13px; }
+      .navlinks { display: flex; gap: 4px; font-size: 14px; font-weight: 720; }
+      .navlinks a { padding: 8px 12px; border-radius: 999px; text-decoration: none; }
+      .navlinks a:hover { background: var(--green); color: var(--night); }
+
+      .hero {
+        position: relative;
+        min-height: calc(100vh - 84px);
+        padding: 82px 0 44px;
+        overflow: hidden;
+      }
+      .hero:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(90deg, rgba(255,253,248,.94) 0%, rgba(255,253,248,.72) 54%, rgba(255,253,248,.28) 100%),
+          url("public/vorstellung2-poster.png") center right / min(560px, 52vw) auto no-repeat;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: min(6vw, 68px);
+        align-items: end;
+      }
+      .hero-kicker { color: var(--green-dark); }
+      .hero h1 span {
+        display: inline-block;
+        padding: 0 .08em .05em;
+        background: var(--green);
+        color: var(--night);
+      }
+      .lead {
+        max-width: 710px;
+        margin-top: 28px;
+        color: #22272e;
+        font-size: clamp(18px, 2vw, 23px);
+        line-height: 1.42;
+        font-weight: 560;
+      }
+      .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+      .btn {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 18px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 850;
+      }
+      .btn.primary { background: var(--night); color: #fff; }
+      .btn.secondary { border: 1px solid var(--line); background: rgba(255,255,255,.72); }
+
+      .listen-card {
+        align-self: stretch;
+        display: grid;
+        gap: 14px;
+        padding: 18px;
+        border: 1px solid rgba(29,185,84,.28);
+        border-radius: 8px;
+        background: rgba(255,253,248,.76);
+        box-shadow: 0 30px 80px -52px rgba(29,185,84,.85);
+        backdrop-filter: blur(18px);
+      }
+      .listen-card strong { display: block; font-size: 15px; }
+      .listen-card span { display: block; color: var(--muted); font-size: 14px; }
+      .signal {
+        display: flex;
+        gap: 12px;
+        padding: 13px;
+        border-radius: 8px;
+        background: rgba(246,247,244,.82);
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        margin-top: 7px;
+        flex: 0 0 auto;
+        border-radius: 50%;
+        background: var(--green);
+      }
+
+      .strip {
+        border-block: 1px solid var(--line);
+        background: var(--night);
+        color: #fff;
+        padding: 28px 0;
+      }
+      .strip-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .strip strong { display: block; color: var(--green); font-size: 28px; line-height: 1; }
+      .strip span { display: block; margin-top: 8px; color: rgba(255,255,255,.68); font-size: 13px; }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: .9fr 1.1fr;
+        gap: 42px;
+        align-items: end;
+      }
+      .section-head p { max-width: 540px; font-size: 17px; }
+
+      .proof-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 34px;
+      }
+      .proof {
+        min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+      }
+      .proof-number {
+        color: var(--green-dark);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: .08em;
+      }
+      .proof h3 { margin-top: 34px; }
+      .proof p { margin-top: 16px; font-size: 15px; }
+      .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+      .chip {
+        padding: 6px 9px;
+        border-radius: 999px;
+        background: rgba(29,185,84,.1);
+        color: var(--green-dark);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .dark {
+        background: var(--night);
+        color: #fff;
+      }
+      .dark p, .dark .eyebrow { color: rgba(255,255,255,.68); }
+      .dark h2, .dark h3 { color: #fff; }
+
+      .activation {
+        display: grid;
+        grid-template-columns: .9fr 1.1fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+      .runlist {
+        display: grid;
+        gap: 10px;
+        padding: 20px;
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 8px;
+        background:
+          radial-gradient(circle at 14% 0%, rgba(29,185,84,.22), transparent 30%),
+          #101010;
+      }
+      .run-row {
+        display: grid;
+        grid-template-columns: 72px 1fr auto;
+        gap: 12px;
+        align-items: center;
+        padding: 13px;
+        border: 1px solid rgba(255,255,255,.1);
+        border-radius: 8px;
+        background: rgba(255,255,255,.06);
+        font-size: 13px;
+      }
+      .time { color: var(--green); font-weight: 900; }
+      .status {
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: rgba(29,185,84,.16);
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 900;
+      }
+      .stage-note {
+        padding: 28px;
+        border-left: 1px solid rgba(255,255,255,.12);
+      }
+      .stage-note p { margin-top: 18px; max-width: 560px; font-size: 18px; }
+
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 34px;
+      }
+      .project {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+      }
+      .project-visual {
+        min-height: 300px;
+        padding: 22px;
+        background: var(--soft);
+      }
+      .project-body { padding: 24px; }
+      .tag {
+        display: inline-flex;
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: var(--green);
+        color: var(--night);
+        font-size: 12px;
+        font-weight: 900;
+      }
+      .project-body h3 { margin-top: 18px; }
+      .project-body p { margin-top: 14px; font-size: 15px; }
+
+      .bot-view {
+        display: grid;
+        align-content: stretch;
+        gap: 12px;
+        min-height: 300px;
+        padding: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(29,185,84,.28);
+        border-radius: 8px;
+        background:
+          radial-gradient(circle at 12% 8%, rgba(29,185,84,.26), transparent 28%),
+          linear-gradient(145deg, #101511 0%, #181d26 52%, #0d0f12 100%);
+        color: #f7fff9;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 24px 50px -36px rgba(29,185,84,.9);
+        font: 11px ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+      .bot-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .bot-title { display: flex; align-items: center; gap: 9px; font-weight: 800; }
+      .pulse {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 0 0 0 0 rgba(29,185,84,.75);
+        animation: ping 1.6s infinite;
+      }
+      .bot-pill {
+        padding: 4px 8px;
+        border: 1px solid rgba(29,185,84,.35);
+        border-radius: 999px;
+        color: rgba(255,255,255,.72);
+      }
+      .bot-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        gap: 8px;
+      }
+      .bot-stat {
+        padding: 10px;
+        border: 1px solid rgba(255,255,255,.09);
+        border-radius: 8px;
+        background: rgba(255,255,255,.06);
+      }
+      .bot-stat strong { display: block; color: var(--green); font-size: 17px; line-height: 1; }
+      .bot-stat span { display: block; margin-top: 5px; color: rgba(255,255,255,.58); font-size: 10px; }
+      .bot-feed { display: grid; width: 100%; gap: 7px; }
+      .offer {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        align-items: center;
+        padding: 9px 10px;
+        border: 1px solid rgba(255,255,255,.09);
+        border-radius: 8px;
+        background: rgba(255,255,255,.075);
+        animation: slideIn 6.8s infinite both;
+      }
+      .offer:nth-child(2) { animation-delay: .9s; }
+      .offer:nth-child(3) { animation-delay: 1.8s; }
+      .offer-name { color: #fff; font-weight: 750; }
+      .offer-meta { margin-top: 2px; color: rgba(255,255,255,.52); }
+      .score {
+        min-width: 52px;
+        padding: 5px 7px;
+        border-radius: 7px;
+        background: rgba(29,185,84,.16);
+        color: var(--green);
+        text-align: center;
+        font-weight: 850;
+      }
+      .bot-terminal {
+        width: 100%;
+        padding: 9px 10px;
+        border-radius: 8px;
+        background: rgba(0,0,0,.25);
+        color: rgba(255,255,255,.65);
+        line-height: 1.55;
+      }
+      .bot-terminal span { color: var(--green); }
+
+      .brand-wall {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        min-height: 300px;
+      }
+      .brand-tile {
+        display: grid;
+        align-content: end;
+        min-height: 136px;
+        padding: 16px;
+        border-radius: 8px;
+        color: #fff;
+        background: var(--night);
+      }
+      .brand-tile:nth-child(1) { background: #111 url("public/vorstellung2-poster.png") center / cover; }
+      .brand-tile:nth-child(2) { background: linear-gradient(135deg, #191414, #1db954); }
+      .brand-tile:nth-child(3) { background: linear-gradient(135deg, #22272e, #0f7d38); }
+      .brand-tile:nth-child(4) { background: #fff; color: var(--night); border: 1px solid var(--line); }
+      .brand-tile strong { font-size: 22px; line-height: 1; }
+      .brand-tile span { margin-top: 6px; color: currentColor; opacity: .72; font-size: 12px; }
+
+      .timeline {
+        position: relative;
+        display: grid;
+        gap: 14px;
+        margin-top: 34px;
+      }
+      .entry {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 24px;
+        padding: 22px 0;
+        border-top: 1px solid var(--line);
+      }
+      .date { color: var(--green-dark); font-size: 13px; font-weight: 900; }
+      .entry p { margin-top: 8px; max-width: 760px; font-size: 15px; }
+
+      .closing {
+        padding: 56px;
+        border-radius: 8px;
+        background: var(--green);
+        color: var(--night);
+      }
+      .closing .eyebrow { color: rgba(25,20,20,.65); }
+      .closing p { max-width: 640px; margin-top: 20px; color: rgba(25,20,20,.72); font-size: 19px; }
+      .closing .btn.primary { background: var(--night); color: #fff; }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 28px 0 48px;
+        border-top: 1px solid rgba(25,20,20,.16);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @keyframes ping {
+        70% { box-shadow: 0 0 0 9px rgba(29,185,84,0); }
+        100% { box-shadow: 0 0 0 0 rgba(29,185,84,0); }
+      }
+      @keyframes slideIn {
+        0% { opacity: 0; transform: translateY(12px); }
+        14%, 72% { opacity: 1; transform: translateY(0); }
+        100% { opacity: .64; transform: translateY(-3px); }
+      }
+
+      @media (max-width: 920px) {
+        .navlinks { display: none; }
+        section { padding: 72px 0; }
+        .hero { min-height: auto; }
+        .hero:before {
+          background:
+            linear-gradient(180deg, rgba(255,253,248,.94) 0%, rgba(255,253,248,.86) 72%, rgba(255,253,248,.96) 100%),
+            url("public/vorstellung2-poster.png") top right / 320px auto no-repeat;
+        }
+        .hero-grid, .section-head, .activation, .project-grid, .proof-grid, .strip-grid {
+          grid-template-columns: 1fr;
+        }
+        .listen-card { margin-top: 16px; }
+        .entry { grid-template-columns: 1fr; gap: 8px; }
+        .run-row { grid-template-columns: 58px 1fr; }
+        .run-row .status { grid-column: 2; justify-self: start; }
+        .closing { padding: 32px; }
+        footer { display: block; }
+        footer span { display: block; margin-top: 8px; }
+      }
+
+      @media (max-width: 560px) {
+        .wrap { width: min(100vw - 28px, 1180px); }
+        h1 { font-size: clamp(44px, 15vw, 68px); }
+        .strip-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .bot-stats, .brand-wall { grid-template-columns: 1fr; }
+        .project-visual { padding: 14px; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="brand"><span class="brand-mark">OJ</span><span>Oliver for Spotify</span></div>
+      <div class="navlinks">
+        <a href="#proof">Beweise</a>
+        <a href="#activation">Live</a>
+        <a href="#projects">Systeme</a>
+        <a href="#experience">Stationen</a>
+        <a href="#contact">Kontakt</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="wrap hero-grid">
+          <div>
+            <span class="eyebrow hero-kicker">Live Experiences · DACH</span>
+            <h1>Ich baue <span>Räume</span>,<br />in denen Musik passiert.</h1>
+            <p class="lead">Eigene Raves bis rund 300 Gäste, eigene Visuals, eigene Abläufe. Heute arbeite ich im operativen Maschinenraum der Alten Münze Berlin.</p>
+            <div class="actions">
+              <a class="btn primary" href="#proof">Warum das passt</a>
+              <a class="btn secondary" href="mailto:Jaenscholi@gmail.com">Mail an Oliver</a>
+            </div>
+          </div>
+          <aside class="listen-card" aria-label="Kurzprofil">
+            <span class="eyebrow">In 8 Sekunden</span>
+            <div class="signal"><i class="dot"></i><div><strong>Berlin, nicht nur als Adresse.</strong><span>Alte Münze, Clubbetrieb, Service, Aufbau, Abbau, Gäste.</span></div></div>
+            <div class="signal"><i class="dot"></i><div><strong>Szene, nicht nur Zielgruppe.</strong><span>Stuttgart begonnen, Berlin angekommen, DACH mitgedacht.</span></div></div>
+            <div class="signal"><i class="dot"></i><div><strong>Brand, nicht nur Geschmack.</strong><span>Tunnel Vision: Logo, Plakate, Bar, Tür, Gästelisten, Nacht.</span></div></div>
+          </aside>
+        </div>
+      </section>
+
+      <div class="strip" aria-label="Kennzahlen">
+        <div class="wrap strip-grid">
+          <div><strong>6+</strong><span>Jahre eigene Event- und Brand-Praxis</span></div>
+          <div><strong>300</strong><span>Gäste bei eigenen Rave-Formaten</span></div>
+          <div><strong>200</strong><span>Gäste bei Späti-Eventreihen</span></div>
+          <div><strong>1</strong><span>Berliner Kult-Location von innen</span></div>
+        </div>
+      </div>
+
+      <section id="proof">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Beweise statt Behauptungen</span>
+              <h2>Ich komme nicht aus dem Marketing.<br />Ich komme aus der Szene.</h2>
+            </div>
+            <p>Spotify Central Europe braucht kein weiteres Skill-Profil. Es braucht jemanden, der Kulturmomente versteht, weil er sie selbst aufgebaut, betrieben und nach der Nacht wieder abgerechnet hat.</p>
+          </div>
+          <div class="grid proof-grid">
+            <article class="proof">
+              <div>
+                <span class="proof-number">01 · Live Experiences</span>
+                <h3>Räume, in denen Musik passiert.</h3>
+                <p>Tunnel Vision war kein Hobby-Poster. Es war Konzept, Visual Identity, Bar, Tür, Gästeliste, Timing und Verantwortung bis zum letzten Gast.</p>
+              </div>
+              <div class="chips"><span class="chip">~300 Gäste</span><span class="chip">eigene Brand</span><span class="chip">Operations</span></div>
+            </article>
+            <article class="proof">
+              <div>
+                <span class="proof-number">02 · Youth Culture</span>
+                <h3>Publikum verstehen, ohne es zu spielen.</h3>
+                <p>Stuttgart, Berlin, Späti, Club, Rave, lokale Szene. Ich kenne nicht nur den Moment vor der Bühne, sondern auch die Liste hinter der Tür.</p>
+              </div>
+              <div class="chips"><span class="chip">DACH-Gefühl</span><span class="chip">lokale Szenen</span><span class="chip">Gäste lesen</span></div>
+            </article>
+            <article class="proof">
+              <div>
+                <span class="proof-number">03 · Brand System</span>
+                <h3>Aus einer Idee wird ein Auftritt.</h3>
+                <p>Logo, Plakat, Becher, Sticker, Playlist-Cover, Social Assets. Ich denke Marken nicht als Folie, sondern als etwas, das Menschen in der Hand halten.</p>
+              </div>
+              <div class="chips"><span class="chip">Adobe CC</span><span class="chip">Leica M6</span><span class="chip">Visual Identity</span></div>
+            </article>
+            <article class="proof">
+              <div>
+                <span class="proof-number">04 · Druck</span>
+                <h3>Wenn Live-Betrieb kippt, bleibe ich brauchbar.</h3>
+                <p>Malteser-Schichten, internationale Teams, Clubnächte, Alte Münze. Ich habe gelernt, Menschen und Abläufe zu sortieren, wenn es laut wird.</p>
+              </div>
+              <div class="chips"><span class="chip">Schichtkoordination</span><span class="chip">Stakeholder</span><span class="chip">hands-on</span></div>
+            </article>
+            <article class="proof">
+              <div>
+                <span class="proof-number">05 · Analyse</span>
+                <h3>Was nach dem Event bleibt.</h3>
+                <p>B.Sc. Wirtschaftswissenschaften, Excel, Abrechnungen, eigene Finanzanalysen. Ich kann aus einem Abend auch ein Learning, ein Deck und eine Entscheidung machen.</p>
+              </div>
+              <div class="chips"><span class="chip">Briefings</span><span class="chip">Excel</span><span class="chip">Post-Campaign</span></div>
+            </article>
+            <article class="proof">
+              <div>
+                <span class="proof-number">06 · Eigenverantwortung</span>
+                <h3>Ich trage eigene Entscheidungen.</h3>
+                <p>Mit 21 habe ich meine erste Wohnung aus selbst erarbeitetem Kapital gekauft. Geblieben ist die Gewohnheit, nicht auf Erlaubnis zu warten.</p>
+              </div>
+              <div class="chips"><span class="chip">Konsequenz</span><span class="chip">Risiko lesen</span><span class="chip">lange Sicht</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="activation" class="dark">
+        <div class="wrap activation">
+          <div class="stage-note">
+            <span class="eyebrow">Activation Thinking</span>
+            <h2>Eine gute Idee muss durch die Tür passen.</h2>
+            <p>Live Experiences scheitern selten an der großen Idee. Sie kippen an Einlass, Timing, Gewerken, Gästewegen, Briefings und an den hundert kleinen Entscheidungen zwischen Aufbau und Abbau.</p>
+            <p>Genau dort habe ich gearbeitet: eigene Events, Späti-Reihen, Clubbetrieb, Malteser-Koordination und aktuell Alte Münze Berlin.</p>
+          </div>
+          <div class="runlist" aria-label="Run of Show">
+            <div class="run-row"><span class="time">14:00</span><strong>Load-in, Raumcheck, Gewerke</strong><span class="status">mapped</span></div>
+            <div class="run-row"><span class="time">16:30</span><strong>Bar, Signage, Gästefluss</strong><span class="status">ready</span></div>
+            <div class="run-row"><span class="time">18:00</span><strong>Door, Liste, Team-Briefing</strong><span class="status">live</span></div>
+            <div class="run-row"><span class="time">21:15</span><strong>Artist Changeover, Crowd Signal</strong><span class="status">watch</span></div>
+            <div class="run-row"><span class="time">00:30</span><strong>Incident, Umbau, Kommunikation</strong><span class="status">solve</span></div>
+            <div class="run-row"><span class="time">03:00</span><strong>Close, Cash, Debrief</strong><span class="status">learn</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Systeme bauen</span>
+              <h2>Ich mache Ideen greifbar.</h2>
+            </div>
+            <p>Manchmal ist das ein Rave mit eigener Bar. Manchmal ein Tool, das Chaos sortiert. Wichtig ist: aus Beobachtung wird ein benutzbares System.</p>
+          </div>
+
+          <div class="grid project-grid">
+            <article class="project">
+              <div class="project-visual">
+                <div class="brand-wall">
+                  <div class="brand-tile"><strong>Tunnel Vision</strong><span>Rave-Brand, Events, Door, Bar</span></div>
+                  <div class="brand-tile"><strong>Dontblvnus</strong><span>Finance, Design, Blindspot-Logo</span></div>
+                  <div class="brand-tile"><strong>Pixelstrom</strong><span>Portfolio-Brand, visuelle Systeme</span></div>
+                  <div class="brand-tile"><strong>Leica M6</strong><span>Bildsprache als Praxis</span></div>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="tag">Brand -> Betrieb</span>
+                <h3>Eigene Marken, nicht nur Moodboards.</h3>
+                <p>Ich habe Namen, Zeichen, Assets und Abläufe gebaut, die im echten Raum funktionieren mussten: gedruckt, geteilt, verkauft, erklärt, wiederverwendet.</p>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-visual">
+                <div class="bot-view">
+                  <div class="bot-top">
+                    <div class="bot-title"><i class="pulse"></i><span>wohnungbot.live</span></div>
+                    <div class="bot-pill">backend stream</div>
+                  </div>
+                  <div class="bot-stats">
+                    <div class="bot-stat"><strong>47</strong><span>gescannt</span></div>
+                    <div class="bot-stat"><strong>9</strong><span>priorisiert</span></div>
+                    <div class="bot-stat"><strong>3</strong><span>sofort senden</span></div>
+                  </div>
+                  <div class="bot-feed">
+                    <div class="offer">
+                      <div><div class="offer-name">2 Zi · Neukölln · 61 m2</div><div class="offer-meta">1.080 EUR · Balkon · 6 min alt</div></div>
+                      <div class="score">94%</div>
+                    </div>
+                    <div class="offer">
+                      <div><div class="offer-name">Studio · Kreuzberg · 39 m2</div><div class="offer-meta">890 EUR · U8 · Duplikat geprüft</div></div>
+                      <div class="score">88%</div>
+                    </div>
+                    <div class="offer">
+                      <div><div class="offer-name">1,5 Zi · Wedding · 44 m2</div><div class="offer-meta">760 EUR · passt zu Budget</div></div>
+                      <div class="score">82%</div>
+                    </div>
+                  </div>
+                  <div class="bot-terminal">
+                    <span>scan</span> immoscout, wg-gesucht, kleinanzeigen<br />
+                    <span>filter</span> duplicates, radius, rent cap<br />
+                    <span>notify</span> best matches pushed
+                  </div>
+                </div>
+              </div>
+              <div class="project-body">
+                <span class="tag">Chaos -> System</span>
+                <h3>Wohnungsbot Berlin</h3>
+                <p>Wenn ein Problem zu schnell und zu unübersichtlich wird, baue ich mir einen Ablauf: Quellen scannen, Duplikate filtern, passende Treffer priorisieren.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Stationen</span>
+              <h2>Die Linie ist nicht glatt.<br />Sie ist brauchbar.</h2>
+            </div>
+            <p>Von Service und Clubbetrieb bis Koordination, Daten und eigener Brand-Praxis: nicht der klassische Agenturweg, aber nah an dem, was Live Experiences in der Realität verlangen.</p>
+          </div>
+
+          <div class="timeline">
+            <article class="entry">
+              <div class="date">Aktuell</div>
+              <div><h3>Alte Münze Berlin · Service / Operations</h3><p>Operativer Teil im laufenden Eventbetrieb: Aufbau, Gästebetreuung, Zusammenspiel mit Gewerken und ein täglicher Blick darauf, wie Brand-Aktivierungen im Raum wirklich funktionieren.</p></div>
+            </article>
+            <article class="entry">
+              <div class="date">2021 - heute</div>
+              <div><h3>Eigene Brand- und Eventprojekte</h3><p>Tunnel Vision, Dontblvnus, Pixelstrom: eigene Formate, visuelle Systeme, Abrechnung, Social Assets, Gästelisten und Events bis rund 300 Gäste.</p></div>
+            </article>
+            <article class="entry">
+              <div class="date">09.2023 - 08.2024</div>
+              <div><h3>Flow&In Späti Stuttgart · Verkauf, Eventplanung & Online-Präsenz</h3><p>Eventreihen bis 200 Gäste mit aufgebaut, Verkauf und Social-Media-Auftritt begleitet, lokale Szene in einem nahbaren Format aktiviert.</p></div>
+            </article>
+            <article class="entry">
+              <div class="date">04.2021 - 09.2022</div>
+              <div><h3>Malteser Hilfsdienst · Operative Koordination</h3><p>Schichtkoordination einer Geflüchteten-Ambulanz, internationale Teams, Stakeholder-Abstimmung und Dienstpläne unter realem Druck.</p></div>
+            </article>
+            <article class="entry">
+              <div class="date">05.2020 - 04.2021</div>
+              <div><h3>Universum Club Stuttgart · Bar & Eventplanung</h3><p>Clubbetrieb von innen: Bar, Gäste, Abläufe, Timing und die kleinen Entscheidungen, die eine Nacht tragen oder kippen lassen.</p></div>
+            </article>
+            <article class="entry">
+              <div class="date">2018 - 2023</div>
+              <div><h3>B.Sc. Wirtschaftswissenschaften · Universität Hohenheim</h3><p>Thesis zu Venture-Capital-Finanzierung im Ländervergleich mit Fokus auf kulturelle und soziale Faktoren. Dazu Datenmanagement und rechtliche Praktika.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="wrap">
+          <div class="closing">
+            <span class="eyebrow">Kontakt</span>
+            <h2>Reden wir über Räume,<br />die Berlin 2026 braucht.</h2>
+            <p>Ich bringe keine perfekte Marketing-Schablone mit. Ich bringe sechs Jahre eigene Live-Kultur, Berliner Operations-Erfahrung und den Blick für das, was im Raum wirklich passiert.</p>
+            <div class="actions"><a class="btn primary" href="mailto:Jaenscholi@gmail.com">Lass uns reden</a></div>
+          </div>
+          <footer>
+            <strong>Oliver Jaensch -> Spotify Central Europe Marketing</strong>
+            <span>Berlin · German / English · Jaenscholi@gmail.com</span>
+          </footer>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
