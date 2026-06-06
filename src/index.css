@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    /* werkhain palette — warm concrete base, industrial charcoal, graffiti accents */
+    /* signature palette — warm base, charcoal, vibrant accents */
     --ink: #171310;
     --ink-active: #000000;
     --body: #39332c;

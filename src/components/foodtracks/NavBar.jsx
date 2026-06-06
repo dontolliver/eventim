@@ -39,7 +39,7 @@ export default function NavBar({ lang, setLang, items, contactLabel, resumeLabel
             className="flex min-w-0 items-baseline gap-2"
           >
             <span className="truncate text-[15px] font-semibold text-ink sm:text-[16px]">Oliver</span>
-            <span className="hidden text-[13px] font-medium text-sig-coral sm:inline">for werkhain</span>
+            <span className="hidden text-[13px] font-medium text-sig-coral sm:inline">for Kess Berlin</span>
           </a>
 
           <div className="hidden items-center gap-1 md:flex">
