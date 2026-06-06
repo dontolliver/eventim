@@ -21,16 +21,16 @@
     --noir: #14110e;
 
     /* Signature accents */
-    --sig-coral: #ff5a1f; /* neon orange — primary */
-    --sig-blue: #2f6bff; /* electric blue */
-    --sig-acid: #c2f53d; /* acid green */
-    --sig-red: #e5341c; /* warm red */
+    --sig-coral: #b56e84; /* muted mauve-rosé — primary (Kess) */
+    --sig-blue: #9c7fa6; /* soft lilac */
+    --sig-acid: #c4a05f; /* champagne gold */
+    --sig-red: #a8455f; /* deep berry */
     --sig-forest: #14110e;
     --sig-cream: #f0e6d4;
-    --sig-peach: #ff8a4c;
-    --sig-mint: #c2f53d;
-    --sig-yellow: #ffd166;
-    --sig-mustard: #d9a441;
+    --sig-peach: #cf9a86; /* warm nude */
+    --sig-mint: #c4a05f;
+    --sig-yellow: #e2c186;
+    --sig-mustard: #c4a05f;
 
     /* System tokens mapped to shadcn */
     --background: 43 33% 94%;

@@ -26,7 +26,7 @@ export default function NavBar({ lang, setLang, items, contactLabel, resumeLabel
         <div
           className={`flex h-[60px] items-center justify-between gap-3 rounded-full border px-4 backdrop-blur-2xl transition-[background-color,box-shadow,border-color] duration-300 sm:px-5 ${
             scrolled
-              ? 'border-sig-coral/25 bg-[#f4f1ea]/85 shadow-[0_18px_50px_-24px_rgba(255,90,31,0.5),0_10px_30px_-22px_rgba(23,19,16,0.3)]'
+              ? 'border-sig-coral/25 bg-[#f4f1ea]/85 shadow-[0_18px_50px_-24px_rgba(181,110,132,0.5),0_10px_30px_-22px_rgba(23,19,16,0.3)]'
               : 'border-black/5 bg-[#f4f1ea]/60 shadow-[0_1px_0_rgba(23,19,16,0.04)]'
           }`}
         >

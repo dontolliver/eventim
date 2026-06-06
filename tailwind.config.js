@@ -37,16 +37,16 @@ module.exports = {
         'surface-dark-el': '#1b1713',
         noir: '#14110e',
         'noir-soft': '#1b1713',
-        'sig-coral': '#ff5a1f', // primary signature: neon orange
-        'sig-blue': '#2f6bff', // electric blue
-        'sig-acid': '#c2f53d', // acid green
-        'sig-red': '#e5341c', // warm red
+        'sig-coral': '#b56e84', // primary signature: muted mauve-rosé (Kess)
+        'sig-blue': '#9c7fa6', // soft lilac
+        'sig-acid': '#c4a05f', // champagne gold
+        'sig-red': '#a8455f', // deep berry
         'sig-forest': '#14110e',
         'sig-cream': '#f0e6d4',
-        'sig-peach': '#ff8a4c',
-        'sig-mint': '#c2f53d',
-        'sig-yellow': '#ffd166',
-        'sig-mustard': '#d9a441',
+        'sig-peach': '#cf9a86', // warm nude
+        'sig-mint': '#c4a05f',
+        'sig-yellow': '#e2c186',
+        'sig-mustard': '#c4a05f',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

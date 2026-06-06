@@ -416,10 +416,10 @@ const content = {
       h2a: 'Ich finde Trends und Creator,',
       h2b: 'bevor sie alle haben.',
       points: [
-        'Ich lebe auf den Plattformen — ich merke ein Format oder einen Sound, solange er noch klein ist.',
+        'Ich lebe auf den Plattformen und merke ein Format oder einen Sound, solange er noch klein ist.',
         'Ich schaue auf Fit und Tonalität, nicht nur auf die Follower-Zahl.',
         'Ich finde lieber den richtigen Creator als den größten.',
-        'Ich spüre, wann eine Kooperation authentisch wirkt — und wann nicht.',
+        'Ich spüre, wann eine Kooperation authentisch wirkt und wann nicht.',
       ],
       detailsLabel: 'Worauf ich bei Creatorn und Trends achte',
       details: ['Trend-Sounds', 'Formate', 'Engagement', 'Kommentare', 'Tonalität', 'Authentizität', 'Brand-Fit', 'Reichweite vs. Fit', 'Timing'],
@@ -626,7 +626,7 @@ function WanderGlobe({ progress = 12.8, statsLabel, pinLabel }) {
 
   return (
     <div ref={ref} className="relative mx-auto w-full max-w-[440px]">
-      <div className="absolute inset-0 -z-10 rounded-full bg-[radial-gradient(circle_at_50%_45%,rgba(255,90,31,0.22),transparent_62%)] blur-xl" />
+      <div className="absolute inset-0 -z-10 rounded-full bg-[radial-gradient(circle_at_50%_45%,rgba(181,110,132,0.22),transparent_62%)] blur-xl" />
       <svg viewBox="0 0 400 400" className="h-auto w-full">
         {/* progress ring */}
         <circle cx="200" cy="200" r={ringR} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="2" />
@@ -1127,7 +1127,7 @@ export default function KessApplication() {
         <section id="kontakt" className="section-gap bg-surface-soft">
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
             <div className="relative overflow-hidden rounded-3xl bg-noir p-8 text-white lg:p-14">
-              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(255,90,31,0.28),transparent_70%)] blur-2xl" />
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(181,110,132,0.28),transparent_70%)] blur-2xl" />
               <div className="relative grid items-end gap-8 lg:grid-cols-[1fr_auto]">
                 <div>
                   <Eyebrow light>{t.kontakt.eyebrow}</Eyebrow>
