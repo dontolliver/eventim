@@ -26,10 +26,10 @@ const content = {
       ctaContact: 'Say hi',
       factsTitle: 'In 8 seconds',
       facts: [
-        [‘Berlin’, ‘On the ground in Berlin, inside the scene and lifestyle bubble Kess speaks to.’],
-        [‘6 years’, ‘Built my own brands from zero: concept, social, content, community.’],
-        [‘Creator side’, ‘I’ve been the host and creator myself. I know how a collab gets negotiated.’],
-        [‘Self-built’, ‘Landing pages, tools, tracking. I can build the e-commerce side, not just run it.’],
+        ['Berlin', 'On the ground in Berlin, inside the scene and lifestyle bubble Kess speaks to.'],
+        ['6 years', 'Built my own brands from zero: concept, social, content, community.'],
+        ['Creator side', 'I’ve been the host and creator myself. I know how a collab gets negotiated.'],
+        ['Self-built', 'Landing pages, tools, tracking. I can build the e-commerce side, not just run it.'],
       ],
     },
     fit: {
@@ -38,8 +38,8 @@ const content = {
       h2b: 'still being built.',
       lead: 'Kess is in an exciting growth phase. That’s exactly where I want to help shape how the brand is seen.',
       points: [
-        ‘Beauty marketing is newer terrain for me, but the logic behind it (aesthetics, community, lifestyle, desirability) has been home for years.’,
-        ‘I’ve been on the creator side myself. I know how influencers think, what makes a good brief and how to negotiate fairly.’,
+        'Beauty marketing is newer terrain for me, but the logic behind it (aesthetics, community, lifestyle, desirability) has been home for years.',
+        'I’ve negotiated with artists and acts for my own events: who fits, what it costs, what we need from each other. The logic maps directly onto creator collabs.',
         'I don’t just run the e-commerce side, I can build it: landing pages and sets in the webshop.',
         'I think in numbers as much as in aesthetics: economics degree, Excel, KPIs.',
       ],
@@ -48,7 +48,7 @@ const content = {
       languagesLabel: 'Languages',
       interests: ['Social & creator culture', 'Beauty & lifestyle brands', 'Design & content', 'Photography (Leica M6)'],
       skills: [
-        'Influencer & creator collabs',
+        'Brand building & community',
         'Briefings & campaign concepts',
         'Content & visual (Photoshop, Adobe CC)',
         'Landing pages & webshop (e-commerce)',
@@ -75,10 +75,10 @@ const content = {
         },
         {
           no: '02',
-          label: 'I know the creator side',
-          title: 'Collabs & negotiation',
-          body: ‘I’ve booked acts, negotiated deals and run door and bar economics myself. I know what makes a creator say yes and how to brief and price a collab fairly.’,
-          bits: ['acquisition', 'price negotiation', 'briefings'],
+          label: 'Negotiated with talent before',
+          title: 'Talent acquisition & deals',
+          body: 'For my own event nights I contacted, negotiated with and briefed artists and acts: who fits the brand, what it costs, what we need from them. The logic of a creator collab is the same.',
+          bits: ['talent acquisition', 'negotiation', 'briefings'],
         },
         {
           no: '03',
@@ -114,7 +114,7 @@ const content = {
       eyebrow: 'My special skill',
       h2: 'Turning creators and content into real brand growth.',
       paragraphs: [
-        'I don’t stop at the idea. I source the creators, write the brief, build the landing page and read the numbers afterwards.',
+        'I don’t stop at the idea. I write the brief, build the landing page and read the numbers afterwards.',
         'One half of me reads people, trends and aesthetics. The other half tracks performance and builds the digital layer underneath.',
       ],
       caps: [
@@ -134,7 +134,7 @@ const content = {
         tag: 'Wander',
         meta: 'Web · landing page · front-end',
         title: 'A visual map of everywhere you’ve been.',
-        body: ‘Wander turns travel memories into a visual world-progress experience. It tracks where you’ve been, maps your personal travel history and shows how much of the world you’ve already explored, with an interactive globe, animated routes and playful progress stats.’,
+        body: 'Wander turns travel memories into a visual world-progress experience. It tracks where you’ve been, maps your personal travel history and shows how much of the world you’ve already explored, with an interactive globe, animated routes and playful progress stats.',
         shows: ['Landing-page build', 'UX / interface', 'Visual storytelling', 'Front-end'],
         showsLabel: 'What it shows',
         showsLine: 'This is how I’d build landing pages and sets for a webshop.',
@@ -162,10 +162,10 @@ const content = {
       h2a: 'I find trends and creators',
       h2b: 'before everyone else has them.',
       points: [
-        ‘I live on the platforms and notice a format or sound while it’s still small.’,
+        'I live on the platforms and notice a format or sound while it’s still small.',
         'I look at fit and tone, not just follower count.',
         'I’d rather find the right creator than the biggest one.',
-        ‘I can tell when a collab will feel authentic and when it won’t.’,
+        'I can tell when a collab will feel authentic and when it won’t.',
       ],
       detailsLabel: 'What I watch in creators and trends',
       details: ['Trend sounds', 'Formats', 'Engagement', 'Comments', 'Tone', 'Authenticity', 'Brand fit', 'Reach vs. fit', 'Timing'],
@@ -252,7 +252,7 @@ const content = {
       eyebrow: 'Let’s talk',
       h2a: 'Let’s make Kess',
       h2b: 'impossible to miss.',
-      lead: ‘50% creator instinct, 50% numbers. That’s exactly how I work. I’m in Berlin and ready to start.’,
+      lead: '50% creator instinct, 50% numbers. That’s exactly how I work. I’m in Berlin and ready to start.',
       cta: 'Email me',
       copyright: '© 2026 Oliver Jaensch · Berlin',
       meta: 'Jaenscholi@gmail.com',
@@ -282,7 +282,7 @@ const content = {
       facts: [
         ['Berlin', 'Vor Ort in Berlin, mitten in der Szene und Lifestyle-Bubble, die Kess anspricht.'],
         ['6 Jahre', 'Eigene Brands von null aufgebaut: Konzept, Social, Content, Community.'],
-        ['Creator-Seite', 'Ich war selbst Host und Creator und weiß, wie eine Kooperation verhandelt wird.'],
+        ['Talent gebucht', 'Für meine eigenen Nights habe ich Acts kontaktiert, verhandelt und gebrieft — dieselbe Logik wie bei Creator-Kooperationen.'],
         ['Selbst gebaut', 'Landing-Pages, Tools, Tracking: die E-Commerce-Seite kann ich bauen, nicht nur bespielen.'],
       ],
     },
@@ -293,7 +293,7 @@ const content = {
       lead: 'Kess ist in einer spannenden Wachstumsphase. Genau da will ich mitgestalten, wie die Marke gesehen wird.',
       points: [
         'Beauty-Marketing ist für mich neueres Terrain, aber die Logik dahinter (Ästhetik, Community, Lifestyle, Begehrlichkeit) ist seit Jahren mein Zuhause.',
-        'Ich war selbst auf der Creator-Seite. Ich weiß, wie Influencer ticken, was ein gutes Briefing ausmacht und wie man fair verhandelt.',
+        'Für meine eigenen Event-Nights habe ich Acts kontaktiert, Preise verhandelt und gebrieft. Wer passt zur Brand, was kostet das, was brauchen wir voneinander — die Logik ist dieselbe wie bei Creator-Kooperationen.',
         'Ich bespiele die E-Commerce-Seite nicht nur, ich kann sie bauen: Landing-Pages und Sets im Webshop.',
         'Ich denke in Zahlen genauso wie in Ästhetik: Wirtschaftsstudium, Excel, KPIs.',
       ],
@@ -302,7 +302,7 @@ const content = {
       languagesLabel: 'Sprachen',
       interests: ['Social & Creator-Kultur', 'Beauty & Lifestyle-Brands', 'Design & Content', 'Fotografie (Leica M6)'],
       skills: [
-        'Influencer- & Creator-Kooperationen',
+        'Brand Building & Community',
         'Briefings & Kampagnenkonzepte',
         'Content & Visual (Photoshop, Adobe CC)',
         'Landing-Pages & Webshop (E-Commerce)',
@@ -329,10 +329,10 @@ const content = {
         },
         {
           no: '02',
-          label: 'Ich kenne die Creator-Seite',
-          title: 'Kooperationen & Verhandlung',
-          body: 'Ich habe Acts gebucht, Deals verhandelt und Tür- und Bar-Ökonomie selbst verantwortet. Ich weiß, was einen Creator überzeugt und wie man eine Kooperation fair briefed und bepreist.',
-          bits: ['Akquise', 'Preisverhandlung', 'Briefings'],
+          label: 'Talent verhandelt und gebrieft',
+          title: 'Akquise & Deals',
+          body: 'Für meine eigenen Nights habe ich Acts kontaktiert, Preise verhandelt und genau gebrieft, was wir voneinander brauchen. Noch keine Influencer — aber dieselbe Grundlogik: wer passt, was kostet das, was kommt dabei raus.',
+          bits: ['Talent-Akquise', 'Preisverhandlung', 'Briefings'],
         },
         {
           no: '03',
@@ -368,7 +368,7 @@ const content = {
       eyebrow: 'Mein Special Skill',
       h2: 'Aus Creatorn und Content echtes Markenwachstum machen.',
       paragraphs: [
-        'Ich höre nicht bei der Idee auf. Ich source die Creator, schreibe das Briefing, baue die Landing-Page und lese danach die Zahlen.',
+        'Ich höre nicht bei der Idee auf. Ich schreibe das Briefing, baue die Landing-Page und lese danach die Zahlen.',
         'Eine Hälfte von mir liest Menschen, Trends und Ästhetik. Die andere trackt Performance und baut die digitale Ebene darunter.',
       ],
       caps: [
