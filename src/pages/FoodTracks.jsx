@@ -272,8 +272,8 @@ const content = {
     resume: 'Lebenslauf',
     hero: {
       eyebrow: 'Influencer Marketing · Content · Brand Growth',
-      h1a: 'Aus Creatorn und Content',
-      h1b: 'mache ich Markenwachstum.',
+      h1a: 'Aus Creatorn und Content mache ich',
+      h1b: 'Markenwachstum.',
       lead: 'Halb Creator-Gespür, halb Analyst, halb Builder: Influencer-Kooperationen, Briefings, Content und die E-Commerce-Seite, von der Landing-Page bis zur KPI.',
       split: '50% Creator-Gespür. 50% Zahlen und Umsetzung. Genau in dieser Schnittstelle lebt Influencer Marketing.',
       ctaPrimary: 'Warum ich zu Kess passe',
